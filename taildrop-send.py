@@ -193,13 +193,20 @@ class SendDialog(QDialog):
         self.zip_thread.failed.connect(self._zip_failed)
         self.zip_thread.start()
 
-    def _zip_failed(self, message):
+    def _finish_zip_thread(self):
+        # The signal that called us was emitted from inside run(), so the
+        # thread may not have returned yet; dropping the last reference to a
+        # running QThread makes Qt abort the whole app.
+        self.zip_thread.wait()
         self.zip_thread = None
+
+    def _zip_failed(self, message):
+        self._finish_zip_thread()
         self._set_busy(None)
         self._show_error(message)
 
     def _start_transfer(self, files):
-        self.zip_thread = None
+        self._finish_zip_thread()
         cmd = core.send_command(self.tailscale, files, self.device)
         # No progress repaint: its carriage-return line is meant for a
         # terminal and would only clutter the error output we show.
