@@ -1,6 +1,6 @@
 # Maintainer: James <claude@jamessparkes.com>
 pkgname=taildrop-send
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="Taildrop for KDE: right-click \"Send via Taildrop…\" in Dolphin, and received files saved to ~/Downloads"
 arch=('any')
