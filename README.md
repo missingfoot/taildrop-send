@@ -21,10 +21,22 @@ popup listing your Tailscale devices. Pick one, hit **Send**, done.
 
 ## Install
 
+As a package (system-wide, into `/usr`):
+
+```bash
+makepkg -si
+```
+
+Or just for your user, into `~/.local`:
+
 ```bash
 ./install.sh
 kbuildsycoca6   # or just restart Dolphin
 ```
+
+Use one or the other, not both, or the menu entry shows up twice.
+
+`install.sh` puts:
 
 | Path | What |
 |---|---|
