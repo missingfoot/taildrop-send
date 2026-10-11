@@ -1,7 +1,13 @@
 # taildrop-send
 
-A Dolphin right-click entry — **Send via Taildrop…** — that opens a small
-popup listing your Tailscale devices. Pick one, hit **Send**, done.
+Taildrop for KDE, both ways:
+
+- **Send:** a Dolphin right-click entry — **Send via Taildrop…** — opens a
+  small popup listing your Tailscale devices. Pick one, hit **Send**, done.
+- **Receive:** a user service, `taildrop.service`, saves files sent to this
+  machine straight into `~/Downloads` (renaming on clashes) instead of
+  leaving them in Tailscale's inbox. Turn it on once with
+  `systemctl --user enable --now taildrop.service` (packaged install only).
 
 ## Features
 
