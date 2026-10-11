@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+MimeType=all/all;
+Actions=sendViaTaildrop;
+X-KDE-Priority=TopLevel
+
+[Desktop Action sendViaTaildrop]
+Name=Send via Taildrop…
+Icon=document-send
+Exec=taildrop-send %F
